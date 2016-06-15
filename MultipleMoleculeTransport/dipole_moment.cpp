@@ -30,6 +30,10 @@ void calculate_dipole_moment(vector<int>& number_of_atoms, vector<int>& atoms_pe
 				rtmp[0] -= molecule[id + 2].X_;
 				rtmp[1] -= molecule[id + 2].Y_;
 				rtmp[2] -= molecule[id + 2].Z_;
+				norm = normalize(rtmp[0], rtmp[1], rtmp[2]);
+				rtmp[0] /= norm;
+				rtmp[1] /= norm;
+				rtmp[2] /= norm;
 
 				molecule[id].eX_ = rtmp[0];
 				molecule[id].eY_ = rtmp[1];
