@@ -53,7 +53,9 @@ void calculate_reorientation_correlation_function(bool reorient_flag,vector<int>
 			for (int id = s_loc[species]; id < s_loc[species] + number_of_atoms[species]; id += atoms_per_molecule[species])
 			{
 				e_dot_e = dotproduct(molecule[id].eX_, molecule[id].eY_, molecule[id].eZ_, molecule[id].eX0_, molecule[id].eY0_, molecule[id].eZ0_);
+				order = 1;
 				c1_av += legendre_polynomial(order, e_dot_e);
+				order = 2;
 				c2_av += legendre_polynomial(order, e_dot_e);
 			}
 			c1_av /= number_of_molecules[species];
