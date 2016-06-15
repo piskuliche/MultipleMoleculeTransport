@@ -21,12 +21,11 @@ void calculate_dipole_moment(vector<int>& number_of_atoms, vector<int>& atoms_pe
 	{
 		for (int id = s_loc[species]; id < s_loc[species]+number_of_atoms[species]; id += atoms_per_molecule[species])
 		{
-
 			if (type[species] == 0)
 			{
 				rtmp[0] = midpoint(molecule[id].X_, molecule[id + 1].X_);
 				rtmp[1] = midpoint(molecule[id].Y_, molecule[id + 1].Y_);
-				rtmp[2] = midpoint(molecule[id].Y_, molecule[id + 1].Y_);
+				rtmp[2] = midpoint(molecule[id].Z_, molecule[id + 1].Z_);
 				rtmp[0] -= molecule[id + 2].X_;
 				rtmp[1] -= molecule[id + 2].Y_;
 				rtmp[2] -= molecule[id + 2].Z_;
