@@ -1,8 +1,26 @@
 //Multiple Molecule Transport
-//Copyright 2016 
+//Copyright 2016 GNU Public License
+//Questions? Email piskuliche@ku.edu
 
 
+/*
+LOOP STRUCTURE:
 
+1.Time_Origin_Loop
+	2.Inner_Time_Loop
+		Diffusion
+		{
+			3.Species_Loop
+				4.Molecules_Loop
+					5.Atoms_Per_Molecule_Loop
+		}
+		Rorientation
+		{
+			3.Species_Loop
+				4.Molecules_Loop
+					5.Atoms_Per_Molecule_Loop
+		}
+*/
 
 #include "main.h"
 #include "inner_time_loop.h"
