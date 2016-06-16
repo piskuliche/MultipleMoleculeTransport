@@ -133,6 +133,9 @@
     <ClInclude Include="reorientation_correlation.h" />
     <ClInclude Include="time_origin_loop.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="License.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

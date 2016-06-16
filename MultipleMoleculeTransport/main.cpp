@@ -1,3 +1,9 @@
+//Multiple Molecule Transport
+//Copyright 2016 
+
+
+
+
 #include "main.h"
 #include "inner_time_loop.h"
 #include "time_origin_loop.h"
@@ -39,9 +45,15 @@ int main()
 	string output_string;
 	//read parameter input
 
+	//FUNCTION CALL: read_parameter()::Reads in a parameter file that provides simulation details necessary for calculation
+	//This includes job length, input filename, step size - etc.
 	read_parameter(number_of_atoms, atoms_per_molecule, number_of_molecules, type, number_of_species, box_side_length, time_dump_freq, start_time, end_time, n_corr, filename, mass, bin_length, calc_every, dt, lines, molecule, total_atoms, s_loc);
 
+	//FUNCTION CALL: initialize_values()::using the information provided by read_parameter() this function initializes memory.
+	//Note: This includes resizing vectors, setting things to zero, etc.
 	initialize_values(number_of_molecules, number_of_atoms, atoms_per_molecule, molecule, reor, diff, number_of_species, start_time, end_time, time_dump_freq, s_loc);
+	//Sets the value for dt.
 	dt = time_dump_freq * calc_every;
+	//FUNCTION CALL: LoopTime_Origin()::This is the outer loop of the simulation, looping over time origins. See note at the top of the program for an explanation of the loop structure.
 	LoopTimeOrigin(number_of_atoms, atoms_per_molecule, number_of_molecules, molecule, reor, diff, start_time, end_time, dt, time_dump_freq, output_string, filename, type, number_of_species, total_atoms, s_loc);
 }
